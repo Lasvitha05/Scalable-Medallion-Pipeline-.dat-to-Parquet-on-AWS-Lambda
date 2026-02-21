@@ -57,7 +57,7 @@ def lambda_handler(event, context):
             
             clean_key = raw_key.replace("raw_data/", "clean_data/")
             s3.put_object(Bucket=bucket_name, Key=clean_key, Body=out_buffer.getvalue())
-            print(f"   ✨ Fully Cleaned & Saved to: {clean_key}")
+            print(f"  Fully Cleaned & Saved to: {clean_key}")
             
         except Exception as e:
             print(f"Error cleaning {raw_key}: {str(e)}")
